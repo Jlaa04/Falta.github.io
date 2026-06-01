@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Falta — Avis des familles</title>
+<meta name="description" content="Avis vérifiés des familles, enfants et enseignants qui utilisent les kits éducatifs Falta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="falta.css">
+<style>
+.page-hero{padding:54px 0 10px;text-align:center}
+.page-hero h1{font-size:clamp(2.3rem,5vw,3.6rem);margin:16px auto 12px;max-width:680px}
+.page-hero p{color:var(--text-soft);font-size:1.1rem;max-width:540px;margin:0 auto}
+section{position:relative;z-index:2}
+.summary{display:grid;grid-template-columns:.7fr 1.3fr;gap:36px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:38px;margin:40px 0 14px;box-shadow:var(--shadow)}
+.score{text-align:center}
+.score .big{font-family:'Fraunces';font-weight:700;font-size:4.4rem;line-height:1;color:var(--text)}
+[dir="rtl"] .score .big{font-family:'Tajawal'}
+.score .stars{color:var(--yellow);font-size:1.4rem;letter-spacing:3px;margin:6px 0}
+.score .cnt{color:var(--text-soft);font-size:.92rem}
+.bars{display:flex;flex-direction:column;gap:11px}
+.bar-row{display:flex;align-items:center;gap:12px;font-size:.9rem}
+.bar-row .lbl{width:46px;color:var(--text-soft);font-weight:600;white-space:nowrap}
+.track{flex:1;height:10px;background:color-mix(in srgb,var(--text) 9%,var(--surface));border-radius:100px;overflow:hidden}
+.fill{height:100%;background:linear-gradient(90deg,var(--coral),var(--yellow));border-radius:100px;width:0;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.bar-row .pct{width:42px;text-align:end;color:var(--text-soft);font-weight:600}
+.review-filters{display:flex;gap:10px;justify-content:center;margin:34px 0 30px;flex-wrap:wrap}
+.chip{padding:9px 18px;border-radius:100px;border:1.5px solid var(--line);background:var(--surface);font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s;color:var(--text-soft);font-family:inherit}
+.chip:hover{color:var(--text)}
+.chip.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding-bottom:20px}
+.review{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:transform .25s,box-shadow .25s}
+.review:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.review .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.review .stars{color:var(--yellow);font-size:1.05rem;letter-spacing:2px}
+.review .cat{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-soft);background:var(--bg);padding:4px 9px;border-radius:100px}
+.review p{font-size:.97rem;margin-bottom:18px}
+.review .who{display:flex;align-items:center;gap:12px}
+.review .who .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;flex:0 0 auto}
+.review .who .nm{font-weight:700;font-size:.95rem}
+.review .who .ct{font-size:.82rem;color:var(--text-soft)}
+.review.hide{display:none}
+.empty{text-align:center;color:var(--text-soft);padding:30px;grid-column:1/-1;display:none}
+.cta-banner{background:var(--coral);border-radius:30px;padding:54px;text-align:center;position:relative;overflow:hidden;color:#fff;margin:50px 0}
+.cta-banner::before,.cta-banner::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.14)}
+.cta-banner::before{width:200px;height:200px;inset-inline-start:-60px;bottom:-80px}
+.cta-banner::after{width:140px;height:140px;inset-inline-end:-30px;top:-40px}
+.cta-banner h2{font-size:clamp(1.8rem,4vw,2.7rem);color:#fff;margin-bottom:12px}
+.cta-banner p{color:rgba(255,255,255,.92);max-width:460px;margin:0 auto 24px;font-size:1.06rem}
+.cta-banner .btn{background:#fff;color:var(--text);border-color:#fff}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;font-size:.85rem;flex-wrap:wrap;gap:10px;padding:46px 0 28px}
+footer .logo{font-size:1.3rem}
+@media(max-width:900px){.summary{grid-template-columns:1fr;gap:26px}.reviews{grid-template-columns:1fr}}
+@media(max-width:540px){.summary,.cta-banner{padding:30px 22px}}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html" class="logo">Falta<span class="dot">.</span></a>
+    <div class="nav-right">
+      <div class="navlinks" id="nav">
+        <a href="index.html" data-i18n="nav.home">Accueil</a>
+        <a href="index.html#concept" data-i18n="nav.concept">Le concept</a>
+        <a href="avis.html" class="current" data-i18n="nav.reviews">Avis</a>
+        <a href="abonnement.html" class="btn coral" data-i18n="nav.subscribe">S'abonner — 99,9 DT</a>
+      </div>
+      <div class="controls" id="faltaControls"></div>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow reveal" data-i18n="rv.eyebrow">Avis vérifiés</span>
+    <h1 class="reveal" data-i18n="rv.title">Les familles parlent de Falta</h1>
+    <p class="reveal" data-i18n="rv.sub">Parents, enfants et enseignants partagent leur expérience.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="summary reveal">
+      <div class="score">
+        <div class="big">4,9</div>
+        <div class="stars">★★★★★</div>
+        <div class="cnt" data-i18n="rv.count">sur 1 926 avis vérifiés</div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="lbl">5 ★</span><div class="track"><div class="fill" data-w="91"></div></div><span class="pct">91%</span></div>
+        <div class="bar-row"><span class="lbl">4 ★</span><div class="track"><div class="fill" data-w="7"></div></div><span class="pct">7%</span></div>
+        <div class="bar-row"><span class="lbl">3 ★</span><div class="track"><div class="fill" data-w="1"></div></div><span class="pct">1%</span></div>
+        <div class="bar-row"><span class="lbl">2 ★</span><div class="track"><div class="fill" data-w="1"></div></div><span class="pct">1%</span></div>
+        <div class="bar-row"><span class="lbl">1 ★</span><div class="track"><div class="fill" data-w="0"></div></div><span class="pct">0%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="review-filters reveal">
+      <button class="chip active" data-f="all" data-i18n="rv.fAll">Tous les avis</button>
+      <button class="chip" data-f="parent" data-i18n="rv.fParent">Parents</button>
+      <button class="chip" data-f="kid" data-i18n="rv.fKid">Enfants</button>
+      <button class="chip" data-f="teacher" data-i18n="rv.fTeacher">Enseignants</button>
+    </div>
+    <div class="reviews" id="reviews">
+      <div class="review reveal" data-cat="parent">
+        <div class="top"><div class="stars">★★★★★</div><span class="cat" data-i18n="rv.cParent">Parent</span></div>
+        <p data-i18n="rv.q1"></p>
+        <div class="who"><span class="av" style="background:#FF6A45">RB</span><div><div class="nm">Rim Ben Salah</div><div class="ct" data-i18n="rv.a1">Maman · Ariana</div></div></div>
+      </div>
+      <div class="review reveal" data-cat="kid">
+        <div class="top"><div class="stars">★★★★★</div><span class="cat" data-i18n="rv.cKid">Enfant</span></div>
+        <p data-i18n="rv.q2"></p>
+        <div class="who"><span class="av" style="background:#0E9C88">YA</span><div><div class="nm">Yassine</div><div class="ct" data-i18n="rv.a2">9 ans · Sousse</div></div></div>
+      </div>
+      <div class="review reveal" data-cat="teacher">
+        <div class="top"><div class="stars">★★★★★</div><span class="cat" data-i18n="rv.cTeacher">Enseignant</span></div>
+        <p data-i18n="rv.q3"></p>
+        <div class="who"><span class="av" style="background:#3C63D6">MT</span><div><div class="nm">Mohamed Trabelsi</div><div class="ct" data-i18n="rv.a3">Instituteur · Tunis</div></div></div>
+      </div>
+      <div class="review reveal" data-cat="parent">
+        <div class="top"><div class="stars">★★★★★</div><span class="cat" data-i18n="rv.cParent">Parent</span></div>
+        <p data-i18n="rv.q4"></p>
+        <div class="who"><span class="av" style="background:#FFC23C;color:#221C18">SK</span><div><div class="nm">Sonia Karoui</div><div class="ct" data-i18n="rv.a4">Maman · Sfax</div></div></div>
+      </div>
+      <div class="review reveal" data-cat="kid">
+        <div class="top"><div class="stars">★★★★☆</div><span class="cat" data-i18n="rv.cKid">Enfant</span></div>
+        <p data-i18n="rv.q5"></p>
+        <div class="who"><span class="av" style="background:#E2461F">LM</span><div><div class="nm">Lina</div><div class="ct" data-i18n="rv.a5">11 ans · Nabeul</div></div></div>
+      </div>
+      <div class="review reveal" data-cat="parent">
+        <div class="top"><div class="stars">★★★★★</div><span class="cat" data-i18n="rv.cParent">Parent</span></div>
+        <p data-i18n="rv.q6"></p>
+        <div class="who"><span class="av" style="background:#0A6E60">AH</span><div><div class="nm">Anis Hamdi</div><div class="ct" data-i18n="rv.a6">Papa · Monastir</div></div></div>
+      </div>
+      <div class="review reveal" data-cat="parent">
+        <div class="top"><div class="stars">★★★★★</div><span class="cat" data-i18n="rv.cParent">Parent</span></div>
+        <p data-i18n="rv.q7"></p>
+        <div class="who"><span class="av" style="background:#3C63D6">FB</span><div><div class="nm">Fatma Bouazizi</div><div class="ct" data-i18n="rv.a7">Maman · Bizerte</div></div></div>
+      </div>
+      <div class="review reveal" data-cat="kid">
+        <div class="top"><div class="stars">★★★★★</div><span class="cat" data-i18n="rv.cKid">Enfant</span></div>
+        <p data-i18n="rv.q8"></p>
+        <div class="who"><span class="av" style="background:#FF6A45">OK</span><div><div class="nm">Oussama</div><div class="ct" data-i18n="rv.a8">12 ans · Gabès</div></div></div>
+      </div>
+      <div class="review reveal" data-cat="teacher">
+        <div class="top"><div class="stars">★★★★★</div><span class="cat" data-i18n="rv.cTeacher">Enseignant</span></div>
+        <p data-i18n="rv.q9"></p>
+        <div class="who"><span class="av" style="background:#0E9C88">HD</span><div><div class="nm">Hela Dridi</div><div class="ct" data-i18n="rv.a9">Professeure · Monastir</div></div></div>
+      </div>
+      <div class="empty" id="empty" data-i18n="rv.empty">Aucun avis dans cette catégorie.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta-banner reveal">
+      <h2 data-i18n="rv.ctaT">Envie de rejoindre l'aventure ?</h2>
+      <p data-i18n="rv.ctaP"></p>
+      <a href="abonnement.html" class="btn"><span data-i18n="rv.ctaB">Je m'abonne maintenant</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#221C18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-bottom">
+    <a href="index.html" class="logo">Falta<span class="dot">.</span></a>
+    <span>© <span id="yr"></span> <span data-i18n="foot.rights"></span></span>
+  </div>
+</footer>
+
+<script>
+window.PAGE_I18N = {
+ fr:{
+  "rv.eyebrow":"Avis vérifiés","rv.title":"Les familles parlent de Falta","rv.sub":"Parents, enfants et enseignants partagent leur expérience.",
+  "rv.count":"sur 1 926 avis vérifiés",
+  "rv.fAll":"Tous les avis","rv.fParent":"Parents","rv.fKid":"Enfants","rv.fTeacher":"Enseignants",
+  "rv.cParent":"Parent","rv.cKid":"Enfant","rv.cTeacher":"Enseignant","rv.empty":"Aucun avis dans cette catégorie pour le moment.",
+  "rv.q1":"« Mon fils attend le facteur chaque début de mois ! Il a monté un vrai petit robot et m'a tout expliqué. Le rapport qualité-prix est imbattable. »","rv.a1":"Maman · Ariana",
+  "rv.q2":"« J'ai fabriqué un volcan qui fait de la mousse et une lampe qui s'allume toute seule. Je veux ouvrir la prochaine boîte surprise ! »","rv.a2":"9 ans · Sousse",
+  "rv.q3":"« J'utilise les kits Falta en atelier de classe. Les fiches sont alignées sur le programme et les élèves sont enfin acteurs de leur apprentissage. »","rv.a3":"Instituteur · Tunis",
+  "rv.q4":"« Enfin une activité sans tablette qui les passionne ! Mes deux filles partagent le kit et se chamaillent gentiment pour faire les expériences. »","rv.a4":"Maman · Sfax",
+  "rv.q5":"« Le pont que j'ai construit a porté 12 petites voitures avant de tomber ! La prochaine fois je le rends encore plus solide. »","rv.a5":"11 ans · Nabeul",
+  "rv.q6":"« Le service client répond vite et la livraison est ponctuelle partout en Tunisie. On se sent vraiment accompagnés. »","rv.a6":"Papa · Monastir",
+  "rv.q7":"« La surprise du mois est devenue un rituel familial. On éteint les écrans, on s'installe à table et on construit ensemble. »","rv.a7":"Maman · Bizerte",
+  "rv.q8":"« Mon circuit a fait clignoter une vraie LED ! Mon petit frère croyait que c'était de la magie. »","rv.a8":"12 ans · Gabès",
+  "rv.q9":"« Un excellent support pour réconcilier les élèves avec les sciences. La démarche par projet change tout. »","rv.a9":"Professeure · Monastir",
+  "rv.ctaT":"Envie de rejoindre l'aventure ?","rv.ctaP":"Offrez à votre enfant une boîte surprise pleine de découvertes, chaque mois, pour 99,9 DT.","rv.ctaB":"Je m'abonne maintenant"
+ },
+ en:{
+  "rv.eyebrow":"Verified reviews","rv.title":"Families talk about Falta","rv.sub":"Parents, children and teachers share their experience.",
+  "rv.count":"across 1,926 verified reviews",
+  "rv.fAll":"All reviews","rv.fParent":"Parents","rv.fKid":"Children","rv.fTeacher":"Teachers",
+  "rv.cParent":"Parent","rv.cKid":"Child","rv.cTeacher":"Teacher","rv.empty":"No reviews in this category yet.",
+  "rv.q1":"“My son waits for the mailman every start of the month! He built a real little robot and explained it all. Unbeatable value.”","rv.a1":"Mom · Ariana",
+  "rv.q2":"“I built a volcano that foams and a lamp that lights up by itself. I want to open the next surprise box!”","rv.a2":"age 9 · Sousse",
+  "rv.q3":"“I use Falta kits in class workshops. The sheets match the curriculum and students are finally active learners.”","rv.a3":"Teacher · Tunis",
+  "rv.q4":"“Finally a screen-free activity they love! My two daughters share the kit and gently fight over the experiments.”","rv.a4":"Mom · Sfax",
+  "rv.q5":"“The bridge I built held 12 toy cars before collapsing! Next time I'll make it even stronger.”","rv.a5":"age 11 · Nabeul",
+  "rv.q6":"“Customer service is fast and delivery is on time everywhere in Tunisia. We truly feel supported.”","rv.a6":"Dad · Monastir",
+  "rv.q7":"“The monthly surprise has become a family ritual. We switch off screens, sit at the table and build together.”","rv.a7":"Mom · Bizerte",
+  "rv.q8":"“My circuit made a real LED blink! My little brother thought it was magic.”","rv.a8":"age 12 · Gabès",
+  "rv.q9":"“A great way to reconcile students with science. The project-based approach changes everything.”","rv.a9":"Teacher · Monastir",
+  "rv.ctaT":"Want to join the adventure?","rv.ctaP":"Give your child a surprise box full of discoveries, every month, for 99.9 DT.","rv.ctaB":"Subscribe now"
+ },
+ ar:{
+  "rv.eyebrow":"آراء موثّقة","rv.title":"العائلات تتحدّث عن فالطة","rv.sub":"الآباء والأطفال والمعلّمون يشاركون تجربتهم.",
+  "rv.count":"من أصل 1926 رأياً موثّقاً",
+  "rv.fAll":"كل الآراء","rv.fParent":"الآباء","rv.fKid":"الأطفال","rv.fTeacher":"المعلّمون",
+  "rv.cParent":"وليّ","rv.cKid":"طفل","rv.cTeacher":"معلّم","rv.empty":"لا توجد آراء في هذه الفئة بعد.",
+  "rv.q1":"«ابني ينتظر ساعي البريد كل بداية شهر! ركّب روبوتاً صغيراً حقيقياً وشرح لي كل شيء. القيمة مقابل السعر لا تُضاهى.»","rv.a1":"أم · أريانة",
+  "rv.q2":"«صنعتُ بركاناً يُخرج رغوة ومصباحاً يضيء وحده. أريد فتح علبة المفاجأة القادمة!»","rv.a2":"9 سنوات · سوسة",
+  "rv.q3":"«أستعمل علب فالطة في ورشات القسم. البطاقات متوافقة مع البرنامج والتلاميذ أصبحوا فاعلين في تعلّمهم.»","rv.a3":"معلّم · تونس",
+  "rv.q4":"«أخيراً نشاط دون لوحة يشدّهم! ابنتاي تتقاسمان العلبة وتتنافسان بلطف على إجراء التجارب.»","rv.a4":"أم · صفاقس",
+  "rv.q5":"«الجسر الذي بنيتُه حمل 12 سيارة صغيرة قبل أن يسقط! المرة القادمة سأجعله أقوى.»","rv.a5":"11 سنة · نابل",
+  "rv.q6":"«خدمة العملاء سريعة والتوصيل دقيق في كل أنحاء تونس. نشعر فعلاً بالمرافقة.»","rv.a6":"أب · المنستير",
+  "rv.q7":"«مفاجأة الشهر صارت طقساً عائلياً. نُطفئ الشاشات ونجلس إلى الطاولة ونبني معاً.»","rv.a7":"أم · بنزرت",
+  "rv.q8":"«دارتي الكهربائية جعلت ضوء LED حقيقياً يومض! أخي الصغير ظنّ أنه سحر.»","rv.a8":"12 سنة · قابس",
+  "rv.q9":"«وسيلة ممتازة لتصالح التلاميذ مع العلوم. منهج المشاريع يغيّر كل شيء.»","rv.a9":"أستاذة · المنستير",
+  "rv.ctaT":"تريد الانضمام إلى المغامرة؟","rv.ctaP":"امنح طفلك علبة مفاجأة مليئة بالاكتشافات، كل شهر، بـ 99.9 د.ت.","rv.ctaB":"اشترك الآن"
+ }
+};
+
+// rating bars animation
+var sumIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+  e.target.querySelectorAll('.fill').forEach(function(f){setTimeout(function(){f.style.width=f.dataset.w+'%'},150)});
+  sumIO.unobserve(e.target)}})},{threshold:.4});
+var sm=document.querySelector('.summary'); if(sm)sumIO.observe(sm);
+
+// filters
+var chips=document.querySelectorAll('.chip'),revs=document.querySelectorAll('.review'),empty=document.getElementById('empty');
+chips.forEach(function(c){c.addEventListener('click',function(){
+  chips.forEach(function(x){x.classList.remove('active')});c.classList.add('active');
+  var f=c.dataset.f,shown=0;
+  revs.forEach(function(r){var ok=(f==='all'||r.dataset.cat===f);r.classList.toggle('hide',!ok);if(ok)shown++});
+  empty.style.display=shown?'none':'block';
+})});
+</script>
+<script src="falta.js"></script>
+</body>
+</html>
