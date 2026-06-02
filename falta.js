@@ -115,8 +115,18 @@
     // mobile burger
     var burger=document.getElementById("burger"), nav=document.getElementById("nav");
     if(burger&&nav){
-      burger.addEventListener("click",function(){nav.classList.toggle("open");burger.classList.toggle("x")});
-      nav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){nav.classList.remove("open");burger.classList.remove("x")})});
+      var overlay=document.createElement("div");
+      overlay.className="nav-overlay";
+      document.body.appendChild(overlay);
+      function toggleNav(){
+        var open=nav.classList.toggle("open");
+        burger.classList.toggle("x");
+        overlay.classList.toggle("show");
+        document.body.style.overflow=open?"hidden":"";
+      }
+      burger.addEventListener("click",toggleNav);
+      overlay.addEventListener("click",toggleNav);
+      nav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){if(nav.classList.contains("open"))toggleNav()})});
     }
     // smooth page transitions
     document.querySelectorAll('a[href$=".html"]').forEach(function(a){
