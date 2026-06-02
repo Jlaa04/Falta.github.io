@@ -13,31 +13,31 @@
   var COMMON = {
     fr:{
       "nav.home":"Accueil","nav.project":"Le projet","nav.concept":"Le concept",
-      "nav.reviews":"Avis","nav.subscribe":"S'abonner — 99,9 DT","nav.fill":"Remplir la demande",
+      "nav.reviews":"Avis","nav.subscribe":"Se pré-inscrire","nav.fill":"Remplir la demande",
       "foot.tagline":"Des kits éducatifs scientifiques et d'ingénierie livrés chaque mois pour faire grandir la curiosité des enfants tunisiens.",
       "foot.explore":"Explorer","foot.company":"Société","foot.contact":"Contact",
-      "foot.about":"À propos","foot.mission":"Notre mission","foot.press":"Presse","foot.jobs":"Carrières","foot.subscribe":"S'abonner",
+      "foot.about":"À propos","foot.mission":"Notre mission","foot.press":"Presse","foot.jobs":"Carrières","foot.subscribe":"Se pré-inscrire",
       "foot.pay":"Paiements acceptés","foot.rights":"Falta — Prototype présenté au concours Injez.",
       "foot.made":"Fait avec curiosité à Tunis 🇹🇳",
       "theme.toggle":"Changer de thème"
     },
     en:{
       "nav.home":"Home","nav.project":"The project","nav.concept":"How it works",
-      "nav.reviews":"Reviews","nav.subscribe":"Subscribe — 99.9 DT","nav.fill":"Fill the request",
+      "nav.reviews":"Reviews","nav.subscribe":"Pre-register","nav.fill":"Fill the request",
       "foot.tagline":"Educational science and engineering kits delivered every month to grow the curiosity of Tunisian children.",
       "foot.explore":"Explore","foot.company":"Company","foot.contact":"Contact",
-      "foot.about":"About","foot.mission":"Our mission","foot.press":"Press","foot.jobs":"Careers","foot.subscribe":"Subscribe",
+      "foot.about":"About","foot.mission":"Our mission","foot.press":"Press","foot.jobs":"Careers","foot.subscribe":"Pre-register",
       "foot.pay":"Accepted payments","foot.rights":"Falta — Prototype presented at the Injez competition.",
       "foot.made":"Made with curiosity in Tunis 🇹🇳",
       "theme.toggle":"Switch theme"
     },
     ar:{
       "nav.home":"الرئيسية","nav.project":"المشروع","nav.concept":"كيف يعمل",
-      "nav.reviews":"الآراء","nav.subscribe":"اشترك — 99.9 د.ت","nav.fill":"املأ الطلب",
+      "nav.reviews":"الآراء","nav.subscribe":"سجّل مسبقاً","nav.fill":"املأ الطلب",
       "foot.tagline":"علب تعليمية علمية وهندسية تصل كل شهر لتنمية فضول الأطفال التونسيين.",
       "foot.explore":"استكشف","foot.company":"الشركة","foot.contact":"اتصل بنا",
-      "foot.about":"من نحن","foot.mission":"مهمتنا","foot.press":"الصحافة","foot.jobs":"وظائف","foot.subscribe":"اشترك",
-      "foot.pay":"وسائل الدفع المقبولة","foot.rights":"فالطة — نموذج مقدّم في مسابقة إنجاز.",
+      "foot.about":"من نحن","foot.mission":"مهمتنا","foot.press":"الصحافة","foot.jobs":"وظائف","foot.subscribe":"سجّل مسبقاً",
+      "foot.pay":"وسائل الدفع المقبولة","foot.rights":"فلته — نموذج مقدّم في مسابقة إنجاز.",
       "foot.made":"صُنع بفضول في تونس 🇹🇳",
       "theme.toggle":"تغيير المظهر"
     }

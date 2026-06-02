@@ -29,13 +29,13 @@
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 
 .stats{padding:24px 0 10px}
-.stats-card{background:var(--panel);color:var(--panel-text);border-radius:28px;padding:40px 30px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;overflow:hidden}
+.stats-card{background:var(--panel);color:var(--panel-text);border-radius:28px;padding:40px 30px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;overflow:hidden}
 .stats-card::before{content:"";position:absolute;inset-inline-end:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(255,106,69,.4),transparent 70%)}
 .stat{text-align:center;position:relative;z-index:2}
 .stat .num{font-family:'Fraunces';font-weight:700;font-size:clamp(2.1rem,4vw,3rem);line-height:1;color:var(--yellow)}
 [dir="rtl"] .stat .num{font-family:'Tajawal'}
 .stat .lab{font-size:.86rem;color:var(--panel-soft);margin-top:8px;font-weight:500}
-.stat:nth-child(2) .num{color:var(--coral)}.stat:nth-child(3) .num{color:var(--teal)}.stat:nth-child(4) .num{color:#fff}
+.stat:nth-child(2) .num{color:var(--coral)}.stat:nth-child(3) .num{color:var(--teal)}
 
 section{position:relative;z-index:2}
 .sec{padding:74px 0}
@@ -144,7 +144,7 @@ footer ul li a{font-size:.92rem;transition:color .2s}footer ul li a:hover{color:
         <a href="#projet" data-i18n="nav.project">Le projet</a>
         <a href="#concept" data-i18n="nav.concept">Le concept</a>
         <a href="avis.html" data-i18n="nav.reviews">Avis</a>
-        <a href="abonnement.html" class="btn coral" data-i18n="nav.subscribe">S'abonner — 99,9 DT</a>
+        <a href="abonnement.html" class="btn coral" data-i18n="nav.subscribe">S'abonner</a>
       </div>
       <div class="controls" id="faltaControls"></div>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -156,7 +156,7 @@ footer ul li a{font-size:.92rem;transition:color .2s}footer ul li a:hover{color:
   <div class="wrap hero-grid">
     <div class="hero-copy">
       <span class="badge reveal"><span class="dot"></span> <span data-i18n="hero.badge">Startup tunisienne</span></span>
-      <h1 class="reveal" data-i18n="hero.title">Chaque mois, un <span class="ink-coral">labo de génie</span> arrive à la maison.</h1>
+      <h1 class="reveal" data-i18n="hero.title">Transformez votre maison en un <span class="ink-coral">labo de génie</span>.</h1>
       <p class="lead reveal" data-i18n="hero.lead">Falta livre aux enfants de 6 à 14 ans des kits éducatifs scientifiques et d'ingénierie.</p>
       <div class="hero-cta reveal">
         <a href="abonnement.html" class="btn coral"><span data-i18n="hero.cta1">Commencer l'abonnement</span>
@@ -165,7 +165,7 @@ footer ul li a{font-size:.92rem;transition:color .2s}footer ul li a:hover{color:
       </div>
       <div class="hero-meta reveal">
         <div class="avatars"><span style="background:#FF6A45">L</span><span style="background:#0E9C88">S</span><span style="background:#3C63D6">M</span><span style="background:#FFC23C;color:#221C18">A</span></div>
-        <div class="stars-inline">★★★★★ <b>4,9/5</b> — <span data-i18n="hero.families"><b>2 400+</b> familles abonnées</span></div>
+        <div class="stars-inline">★★★★★ <b>4,9/5</b> — <span data-i18n="hero.families"><b>68</b> familles pré-inscrites</span></div>
       </div>
     </div>
     <div class="hero-art reveal">
@@ -179,7 +179,7 @@ footer ul li a{font-size:.92rem;transition:color .2s}footer ul li a:hover{color:
           <path d="M70 180 L230 130 L390 180 L230 230 Z" fill="#FFA081"/>
           <path d="M70 180 L230 130 L160 70 L20 110 Z" fill="#FFB39B"/>
           <path d="M390 180 L230 130 L300 70 L440 110 Z" fill="#FF8163"/>
-          <text x="200" y="320" font-family="Fraunces,serif" font-size="34" font-weight="700" fill="#fff">F</text>
+          <text x="200" y="320" font-family="Fraunces,serif" font-size="34" font-weight="700" fill="#fff"></text>
         </g>
         <g class="float b"><g transform="translate(140 40)">
           <path d="M30 0 C50 18 50 60 30 86 C10 60 10 18 30 0 Z" fill="#3C63D6"/>
@@ -202,10 +202,9 @@ footer ul li a{font-size:.92rem;transition:color .2s}footer ul li a:hover{color:
 <section class="stats">
   <div class="wrap">
     <div class="stats-card reveal">
-      <div class="stat"><div class="num" data-count="2480" data-suffix="+">0</div><div class="lab" data-i18n="stat.families">Familles abonnées</div></div>
-      <div class="stat"><div class="num" data-count="31600" data-suffix="+">0</div><div class="lab" data-i18n="stat.kits">Kits livrés</div></div>
-      <div class="stat"><div class="num" data-count="96" data-suffix="%">0</div><div class="lab" data-i18n="stat.satisf">Parents satisfaits</div></div>
-      <div class="stat"><div class="num" data-count="24" data-suffix="">0</div><div class="lab" data-i18n="stat.gov">Gouvernorats couverts</div></div>
+      <div class="stat"><div class="num" data-count="68" data-suffix="">0</div><div class="lab" data-i18n="stat.families">Pré-inscriptions</div></div>
+      <div class="stat"><div class="num" data-count="6" data-suffix="">0</div><div class="lab" data-i18n="stat.kits">Gouvernorats ciblés</div></div>
+      <div class="stat"><div class="num" data-count="3" data-suffix="">0</div><div class="lab" data-i18n="stat.satisf">Kits en préparation</div></div>
     </div>
   </div>
 </section>
@@ -216,23 +215,23 @@ footer ul li a{font-size:.92rem;transition:color .2s}footer ul li a:hover{color:
       <div class="reveal">
         <span class="eyebrow" data-i18n="about.eyebrow">Notre projet</span>
         <h2 data-i18n="about.title">Apprendre les sciences en mettant les mains dedans</h2>
-        <p data-i18n="about.p1"></p>
-        <p data-i18n="about.p2"></p>
-        <p data-i18n="about.p3"></p>
+        <p data-i18n="about.p1">Falta est une jeune startup tunisienne née d'un constat simple : <strong>les enfants apprennent mieux en faisant.</strong> Pourtant, les activités scientifiques et techniques de qualité restent souvent rares, chères ou réservées aux grandes villes.</p>
+        <p data-i18n="about.p2">Notre réponse : un <strong>abonnement mensuel</strong> qui livre, partout en Tunisie, une boîte surprise remplie d'expériences scientifiques et de défis d'ingénierie pensés pour les <strong>6 à 14 ans</strong>.</p>
+        <p data-i18n="about.p3">Notre ambition : faire grandir une génération d'enfants qui n'ont pas peur d'essayer, de se tromper et de recommencer.</p>
       </div>
       <div class="context-card reveal">
         <span class="k" data-i18n="ctx.k">★ Le cadre du projet</span>
         <h3 data-i18n="ctx.title">Un projet porté par de jeunes entrepreneurs</h3>
-        <p data-i18n="ctx.p"></p>
-        <div class="tline"><span class="ic">🎓</span><div><b data-i18n="ctx.l1t">Programme entrepreneurial</b><small data-i18n="ctx.l1s"></small></div></div>
-        <div class="tline"><span class="ic">🇹🇳</span><div><b data-i18n="ctx.l2t">Impact local</b><small data-i18n="ctx.l2s"></small></div></div>
-        <div class="tline"><span class="ic">💡</span><div><b data-i18n="ctx.l3t">Modèle viable</b><small data-i18n="ctx.l3s"></small></div></div>
+        <p data-i18n="ctx.p">Falta a été imaginé et développé dans le cadre de la <strong style="color:#fff">compétition Injez</strong>, le programme d'entrepreneuriat des jeunes.</p>
+        <div class="tline"><span class="ic">🎓</span><div><b data-i18n="ctx.l1t">Programme entrepreneurial</b><small data-i18n="ctx.l1s">Encadré par Injez — de l'idée au prototype d'entreprise.</small></div></div>
+        <div class="tline"><span class="ic">🇹🇳</span><div><b data-i18n="ctx.l2t">Impact local</b><small data-i18n="ctx.l2s">Une solution éducative pensée pour les familles tunisiennes.</small></div></div>
+        <div class="tline"><span class="ic">💡</span><div><b data-i18n="ctx.l3t">Modèle viable</b><small data-i18n="ctx.l3s">Prouver qu'un projet à impact peut aussi être rentable.</small></div></div>
       </div>
     </div>
     <div class="pillars">
-      <div class="pillar reveal"><div class="emo">🎯</div><h4 data-i18n="pil.1t">Notre mission</h4><p data-i18n="pil.1p"></p></div>
-      <div class="pillar reveal"><div class="emo">🌍</div><h4 data-i18n="pil.2t">Notre impact</h4><p data-i18n="pil.2p"></p></div>
-      <div class="pillar reveal"><div class="emo">🚀</div><h4 data-i18n="pil.3t">Notre vision</h4><p data-i18n="pil.3p"></p></div>
+      <div class="pillar reveal"><div class="emo">🎯</div><h4 data-i18n="pil.1t">Notre mission</h4><p data-i18n="pil.1p">Démocratiser les sciences et l'ingénierie pour chaque enfant, où qu'il vive en Tunisie.</p></div>
+      <div class="pillar reveal"><div class="emo">🌍</div><h4 data-i18n="pil.2t">Notre impact</h4><p data-i18n="pil.2p">Un apprentissage par le jeu, sans écran, qui développe la confiance et l'esprit critique.</p></div>
+      <div class="pillar reveal"><div class="emo">🚀</div><h4 data-i18n="pil.3t">Notre vision</h4><p data-i18n="pil.3p">Faire éclore la prochaine génération d'inventeurs, de bâtisseuses et d'ingénieurs.</p></div>
     </div>
   </div>
 </section>
@@ -242,18 +241,18 @@ footer ul li a{font-size:.92rem;transition:color .2s}footer ul li a:hover{color:
     <div class="sec-head reveal">
       <span class="eyebrow" data-i18n="concept.eyebrow">Comment ça marche</span>
       <h2 data-i18n="concept.title">Trois étapes, zéro stress</h2>
-      <p data-i18n="concept.sub"></p>
+      <p data-i18n="concept.sub">Vous choisissez le niveau, on s'occupe du reste. Un nouveau kit débarque chaque mois.</p>
     </div>
     <div class="steps">
       <div class="step reveal"><div class="n">1</div>
         <svg class="ico" width="34" height="34" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#FF6A45" stroke-width="2"/><path d="M9 12l2 2 4-4" stroke="#FF6A45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <h3 data-i18n="concept.s1t">Indiquez l'âge</h3><p data-i18n="concept.s1p"></p></div>
+        <h3 data-i18n="concept.s1t">Indiquez l'âge</h3><p data-i18n="concept.s1p">Dites-nous l'âge de l'enfant. On adapte la difficulté à son niveau.</p></div>
       <div class="step reveal"><div class="n">2</div>
         <svg class="ico" width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M3 8l9-4 9 4-9 4-9-4z" stroke="#0E9C88" stroke-width="2" stroke-linejoin="round"/><path d="M3 8v8l9 4 9-4V8" stroke="#0E9C88" stroke-width="2" stroke-linejoin="round"/></svg>
-        <h3 data-i18n="concept.s2t">Recevez chaque mois</h3><p data-i18n="concept.s2p"></p></div>
+        <h3 data-i18n="concept.s2t">Recevez chaque mois</h3><p data-i18n="concept.s2p">Un kit complet, livré chez vous : matériel, guide illustré et expériences prêtes à l'emploi.</p></div>
       <div class="step reveal"><div class="n">3</div>
         <svg class="ico" width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 3v3m0 12v3M5.6 5.6l2.1 2.1m8.6 8.6l2.1 2.1M3 12h3m12 0h3M5.6 18.4l2.1-2.1m8.6-8.6l2.1-2.1" stroke="#3C63D6" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="#3C63D6"/></svg>
-        <h3 data-i18n="concept.s3t">Construisez & apprenez</h3><p data-i18n="concept.s3p"></p></div>
+        <h3 data-i18n="concept.s3t">Construisez & apprenez</h3><p data-i18n="concept.s3p">L'enfant monte son projet, comprend le « pourquoi » et garde une réalisation dont il est fier.</p></div>
     </div>
   </div>
 </section>
@@ -264,7 +263,7 @@ footer ul li a{font-size:.92rem;transition:color .2s}footer ul li a:hover{color:
       <div>
         <span class="eyebrow" data-i18n="surp.eyebrow">L'effet « waouh »</span>
         <h2 data-i18n="surp.title">Chaque mois, une surprise scellée</h2>
-        <p data-i18n="surp.p"></p>
+        <p data-i18n="surp.p">On ne dévoile jamais le contenu à l'avance — c'est tout le plaisir ! Sciences ou ingénierie, l'enfant découvre un nouveau défi dès l'ouverture de la boîte.</p>
         <div class="tags"><span data-i18n="surp.t1">🔬 Sciences</span><span data-i18n="surp.t2">⚙️ Ingénierie</span><span data-i18n="surp.t3">📦 Surprise</span><span data-i18n="surp.t4">✨ Tunisie</span></div>
       </div>
       <div class="surprise-art">
@@ -289,10 +288,10 @@ footer ul li a{font-size:.92rem;transition:color .2s}footer ul li a:hover{color:
   <div class="wrap">
     <div class="growth reveal">
       <div>
-        <span class="pill" data-i18n="growth.pill">📈 Croissance des abonnements</span>
-        <h3 data-i18n="growth.title" style="margin-top:14px">Une communauté qui double chaque trimestre</h3>
-        <p data-i18n="growth.p"></p>
-        <p style="margin:0"><strong style="font-family:Fraunces;font-size:1.4rem;color:var(--teal-deep)">+38%</strong> <span data-i18n="growth.note"></span></p>
+        <span class="pill" data-i18n="growth.pill">📈 Intérêt grandissant</span>
+        <h3 data-i18n="growth.title" style="margin-top:14px">Un engouement qui confirme le besoin</h3>
+        <p data-i18n="growth.p">Depuis le lancement de la page, les pré-inscriptions grimpent semaine après semaine.</p>
+        <p style="margin:0"><strong style="font-family:Fraunces;font-size:1.4rem;color:var(--teal-deep)">+45%</strong> <span data-i18n="growth.note">de croissance moyenne hebdomadaire.</span></p>
       </div>
       <div>
         <svg class="chart" viewBox="0 0 480 280" id="growthChart">
@@ -308,14 +307,14 @@ footer ul li a{font-size:.92rem;transition:color .2s}footer ul li a:hover{color:
 <section class="sec" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow" data-i18n="rev.eyebrow">Ils nous adorent</span>
-      <h2 data-i18n="rev.title">4,9 / 5 sur plus de 1 900 avis</h2>
-      <p data-i18n="rev.sub"></p>
+      <span class="eyebrow" data-i18n="rev.eyebrow">Ils nous soutiennent</span>
+      <h2 data-i18n="rev.title">Ce que pensent les premiers inscrits</h2>
+      <p data-i18n="rev.sub">Des familles tunisiennes enthousiastes nous font déjà confiance.</p>
     </div>
     <div class="reviews">
-      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="rev.q1"></p><div class="who"><span class="av" style="background:#FF6A45">RB</span><div><div class="nm">Rim Ben Salah</div><div class="ct" data-i18n="rev.r1">Maman · Ariana</div></div></div></div>
-      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="rev.q2"></p><div class="who"><span class="av" style="background:#0E9C88">YA</span><div><div class="nm">Yassine</div><div class="ct" data-i18n="rev.r2">9 ans · Sousse</div></div></div></div>
-      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="rev.q3"></p><div class="who"><span class="av" style="background:#3C63D6">MT</span><div><div class="nm">Mohamed Trabelsi</div><div class="ct" data-i18n="rev.r3">Instituteur · Tunis</div></div></div></div>
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="rev.q1">« On a pu tester le prototype lors d'un événement, mon fils a adoré ! On a hâte de recevoir la première boîte. »</p><div class="who"><span class="av" style="background:#FF6A45">RB</span><div><div class="nm">Rim Ben Salah</div><div class="ct" data-i18n="rev.r1">Maman · Ariana</div></div></div></div>
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="rev.q2">« J'ai fabriqué un petit robot qui avance tout seul avec l'équipe Falta. Je veux m'abonner ! »</p><div class="who"><span class="av" style="background:#0E9C88">YA</span><div><div class="nm">Yassine</div><div class="ct" data-i18n="rev.r2">9 ans · Sousse</div></div></div></div>
+      <div class="review reveal"><div class="stars">★★★★★</div><p data-i18n="rev.q3">« Un concept génial qui manque cruellement en Tunisie. L'approche est très pédagogique. »</p><div class="who"><span class="av" style="background:#3C63D6">MT</span><div><div class="nm">Mohamed Trabelsi</div><div class="ct" data-i18n="rev.r3">Instituteur · Tunis</div></div></div></div>
     </div>
     <div style="text-align:center;margin-top:36px" class="reveal">
       <a href="avis.html" class="btn ghost"><span data-i18n="rev.all">Lire tous les avis</span>
@@ -327,9 +326,9 @@ footer ul li a{font-size:.92rem;transition:color .2s}footer ul li a:hover{color:
 <section class="sec" style="padding-top:0">
   <div class="wrap">
     <div class="cta-banner reveal">
-      <h2 data-i18n="cta.title">Prêt à éveiller un petit génie ?</h2>
-      <p data-i18n="cta.p"></p>
-      <a href="abonnement.html" class="btn"><span data-i18n="cta.btn">Je m'abonne maintenant</span>
+      <h2 data-i18n="cta.title">Prêt à rejoindre l'aventure ?</h2>
+      <p data-i18n="cta.p">Pré-inscrivez-vous dès maintenant — les premières livraisons arrivent bientôt !</p>
+      <a href="abonnement.html" class="btn"><span data-i18n="cta.btn">Je me pré-inscris</span>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#221C18" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
@@ -340,7 +339,7 @@ footer ul li a{font-size:.92rem;transition:color .2s}footer ul li a:hover{color:
     <div class="foot-grid">
       <div>
         <a href="index.html" class="logo">Falta<span class="dot">.</span></a>
-        <p data-i18n="foot.tagline"></p>
+        <p data-i18n="foot.tagline">Des kits éducatifs scientifiques et d'ingénierie livrés chaque mois pour faire grandir la curiosité des enfants tunisiens.</p>
       </div>
       <div><h4 data-i18n="foot.explore">Explorer</h4><ul>
         <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
@@ -368,10 +367,10 @@ footer ul li a{font-size:.92rem;transition:color .2s}footer ul li a:hover{color:
 window.PAGE_I18N = {
  fr:{
   "hero.badge":"Startup tunisienne · pensée pour les enfants curieux",
-  "hero.title":"Chaque mois, un <span class=\"ink-coral\">labo de génie</span> arrive à la maison.",
+  "hero.title":"Transformez votre maison en un <span class=\"ink-coral\">labo de génie</span>.",
   "hero.lead":"Falta livre aux enfants de 6 à 14 ans des kits éducatifs <strong>scientifiques</strong> et <strong>d'ingénierie</strong>. Ils construisent, expérimentent et apprennent en s'amusant — sans écran, par abonnement mensuel.",
-  "hero.cta1":"Commencer l'abonnement","hero.cta2":"Découvrir le concept","hero.families":"<b>2 400+</b> familles abonnées",
-  "stat.families":"Familles abonnées","stat.kits":"Kits livrés","stat.satisf":"Parents satisfaits","stat.gov":"Gouvernorats couverts",
+  "hero.cta1":"Commencer l'abonnement","hero.cta2":"Découvrir le concept","hero.families":"<b>68</b> familles pré-inscrites",
+  "stat.families":"Pré-inscriptions","stat.kits":"Gouvernorats ciblés","stat.satisf":"Kits en préparation",
   "about.eyebrow":"Notre projet","about.title":"Apprendre les sciences en mettant les mains dedans",
   "about.p1":"Falta est une jeune startup tunisienne née d'un constat simple : <strong>les enfants apprennent mieux en faisant.</strong> Pourtant, les activités scientifiques et techniques de qualité restent souvent rares, chères ou réservées aux grandes villes.",
   "about.p2":"Notre réponse : un <strong>abonnement mensuel</strong> qui livre, partout en Tunisie, une boîte surprise remplie d'expériences scientifiques et de défis d'ingénierie pensés pour les <strong>6 à 14 ans</strong>.",
@@ -391,22 +390,22 @@ window.PAGE_I18N = {
   "surp.eyebrow":"L'effet « waouh »","surp.title":"Chaque mois, une surprise scellée",
   "surp.p":"On ne dévoile jamais le contenu à l'avance — c'est tout le plaisir ! Sciences ou ingénierie, l'enfant découvre un nouveau défi dès l'ouverture de la boîte.",
   "surp.t1":"🔬 Sciences","surp.t2":"⚙️ Ingénierie","surp.t3":"📦 Nouveau thème surprise","surp.t4":"✨ 100 % conçu en Tunisie",
-  "growth.pill":"📈 Croissance des abonnements","growth.title":"Une communauté qui double chaque trimestre",
-  "growth.p":"Depuis le lancement, le nombre d'abonnements actifs grimpe mois après mois.","growth.note":"de croissance moyenne mensuelle en 2025.",
-  "rev.eyebrow":"Ils nous adorent","rev.title":"4,9 / 5 sur plus de 1 900 avis","rev.sub":"Des centaines de familles tunisiennes ont déjà adopté Falta.",
-  "rev.q1":"« Mon fils attend le facteur chaque début de mois ! Il a monté un vrai petit robot et m'a tout expliqué. »","rev.r1":"Maman · Ariana",
-  "rev.q2":"« J'ai fabriqué un volcan qui fait de la mousse et une lampe qui s'allume toute seule. Je veux la prochaine boîte surprise ! »","rev.r2":"9 ans · Sousse",
-  "rev.q3":"« J'utilise les kits Falta en atelier de classe. Les fiches sont alignées sur le programme et les élèves sont enfin acteurs. »","rev.r3":"Instituteur · Tunis",
+  "growth.pill":"📈 Intérêt grandissant","growth.title":"Un engouement qui confirme le besoin",
+  "growth.p":"Depuis le lancement de la page, les pré-inscriptions grimpent semaine après semaine.","growth.note":"de croissance moyenne hebdomadaire.",
+  "rev.eyebrow":"Ils nous soutiennent","rev.title":"Ce que pensent les premiers inscrits","rev.sub":"Des familles tunisiennes enthousiastes nous font déjà confiance.",
+  "rev.q1":"« On a pu tester le prototype lors d'un événement, mon fils a adoré ! On a hâte de recevoir la première boîte. »","rev.r1":"Maman · Ariana",
+  "rev.q2":"« J'ai fabriqué un petit robot qui avance tout seul avec l'équipe Falta. Je veux m'abonner ! »","rev.r2":"9 ans · Sousse",
+  "rev.q3":"« Un concept génial qui manque cruellement en Tunisie. L'approche est très pédagogique. »","rev.r3":"Instituteur · Tunis",
   "rev.all":"Lire tous les avis",
-  "cta.title":"Prêt à éveiller un petit génie ?","cta.p":"Un seul abonnement, tout inclus, à <strong>99,9 DT / mois</strong>. Annulable à tout moment, sans engagement.","cta.btn":"Je m'abonne maintenant",
-  "foot.subscribe":"S'abonner"
+  "cta.title":"Prêt à rejoindre l'aventure ?","cta.p":"Pré-inscrivez-vous dès maintenant — les premières livraisons arrivent bientôt !","cta.btn":"Je me pré-inscris",
+  "foot.subscribe":"Se pré-inscrire"
  },
  en:{
   "hero.badge":"Tunisian startup · made for curious kids",
-  "hero.title":"Every month, a <span class=\"ink-coral\">genius lab</span> lands at home.",
+  "hero.title":"Turn your home into a <span class=\"ink-coral\">genius lab</span>.",
   "hero.lead":"Falta delivers <strong>science</strong> and <strong>engineering</strong> educational kits to kids aged 6–14. They build, experiment and learn while having fun — screen-free, by monthly subscription.",
-  "hero.cta1":"Start the subscription","hero.cta2":"See how it works","hero.families":"<b>2,400+</b> subscribed families",
-  "stat.families":"Subscribed families","stat.kits":"Kits delivered","stat.satisf":"Happy parents","stat.gov":"Governorates covered",
+  "hero.cta1":"Start the subscription","hero.cta2":"See how it works","hero.families":"<b>68</b> pre-registered families",
+  "stat.families":"Pre-registrations","stat.kits":"Targeted governorates","stat.satisf":"Kits in preparation",
   "about.eyebrow":"Our project","about.title":"Learning science by getting hands dirty",
   "about.p1":"Falta is a young Tunisian startup born from a simple observation: <strong>children learn better by doing.</strong> Yet quality science and tech activities remain rare, costly or limited to big cities.",
   "about.p2":"Our answer: a <strong>monthly subscription</strong> that delivers, all across Tunisia, a surprise box full of science experiments and engineering challenges designed for ages <strong>6 to 14</strong>.",
@@ -426,22 +425,22 @@ window.PAGE_I18N = {
   "surp.eyebrow":"The wow effect","surp.title":"Every month, a sealed surprise",
   "surp.p":"We never reveal the contents in advance — that's the whole fun! Science or engineering, the child discovers a new challenge the moment the box opens.",
   "surp.t1":"🔬 Science","surp.t2":"⚙️ Engineering","surp.t3":"📦 New surprise theme","surp.t4":"✨ 100% made in Tunisia",
-  "growth.pill":"📈 Subscription growth","growth.title":"A community doubling every quarter",
-  "growth.p":"Since launch, active subscriptions keep climbing month after month.","growth.note":"average monthly growth in 2025.",
-  "rev.eyebrow":"They love us","rev.title":"4.9 / 5 across 1,900+ reviews","rev.sub":"Hundreds of Tunisian families have already adopted Falta.",
-  "rev.q1":"“My son waits for the mailman every start of the month! He built a real little robot and explained it all to me.”","rev.r1":"Mom · Ariana",
-  "rev.q2":"“I built a volcano that foams and a lamp that lights up by itself. I want the next surprise box!”","rev.r2":"age 9 · Sousse",
-  "rev.q3":"“I use Falta kits in class workshops. The sheets match the curriculum and students are finally active learners.”","rev.r3":"Teacher · Tunis",
+  "growth.pill":"📈 Growing interest","growth.title":"An enthusiasm that confirms the need",
+  "growth.p":"Since the page launch, pre-registrations keep climbing week after week.","growth.note":"average weekly growth.",
+  "rev.eyebrow":"They support us","rev.title":"What our first subscribers think","rev.sub":"Enthusiastic Tunisian families already trust us.",
+  "rev.q1":"“We tested the prototype at an event, my son loved it! We can't wait for the first box.”","rev.r1":"Mom · Ariana",
+  "rev.q2":"“I built a little robot that moves by itself with the Falta team. I want to subscribe!”","rev.r2":"age 9 · Sousse",
+  "rev.q3":"“A brilliant concept that is sorely missing in Tunisia. The approach is highly educational.”","rev.r3":"Teacher · Tunis",
   "rev.all":"Read all reviews",
-  "cta.title":"Ready to spark a little genius?","cta.p":"One subscription, all included, at <strong>99.9 DT / month</strong>. Cancel anytime, no commitment.","cta.btn":"Subscribe now",
-  "foot.subscribe":"Subscribe"
+  "cta.title":"Ready to join the adventure?","cta.p":"Pre-register now — first deliveries are coming soon!","cta.btn":"Pre-register now",
+  "foot.subscribe":"Pre-register"
  },
  ar:{
   "hero.badge":"شركة ناشئة تونسية · مصمّمة للأطفال الفضوليين",
-  "hero.title":"كل شهر، يصل <span class=\"ink-coral\">مختبر عبقري</span> إلى المنزل.",
+  "hero.title":"حوّل بيتك إلى <span class=\"ink-coral\">مختبر عبقري</span>.",
   "hero.lead":"توصّل فالطة علباً تعليمية <strong>علمية</strong> و<strong>هندسية</strong> للأطفال من 6 إلى 14 سنة. يبنون ويجرّبون ويتعلمون باللعب — دون شاشات، عبر اشتراك شهري.",
-  "hero.cta1":"ابدأ الاشتراك","hero.cta2":"اكتشف الفكرة","hero.families":"<b>+2400</b> عائلة مشتركة",
-  "stat.families":"عائلات مشتركة","stat.kits":"علب تم تسليمها","stat.satisf":"آباء راضون","stat.gov":"ولايات مغطّاة",
+  "hero.cta1":"ابدأ الاشتراك","hero.cta2":"اكتشف الفكرة","hero.families":"<b>68</b> عائلة مسجّلة مسبقاً",
+  "stat.families":"تسجيلات مسبقة","stat.kits":"ولايات مستهدفة","stat.satisf":"علب قيد التحضير",
   "about.eyebrow":"مشروعنا","about.title":"تعلّم العلوم بالعمل اليدوي",
   "about.p1":"فالطة شركة ناشئة تونسية شابة وُلدت من ملاحظة بسيطة: <strong>الأطفال يتعلّمون أفضل عندما يفعلون.</strong> ومع ذلك تبقى الأنشطة العلمية والتقنية الجيدة نادرة أو مكلفة أو محصورة في المدن الكبرى.",
   "about.p2":"جوابنا: <strong>اشتراك شهري</strong> يوصّل في كل أنحاء تونس علبة مفاجأة مليئة بتجارب علمية وتحدّيات هندسية مصمّمة للأعمار من <strong>6 إلى 14</strong>.",
@@ -461,15 +460,15 @@ window.PAGE_I18N = {
   "surp.eyebrow":"أثر «الواو»","surp.title":"كل شهر مفاجأة مغلقة",
   "surp.p":"لا نكشف المحتوى مسبقاً أبداً — وهذه هي المتعة! علوم أو هندسة، يكتشف الطفل تحدياً جديداً فور فتح العلبة.",
   "surp.t1":"🔬 علوم","surp.t2":"⚙️ هندسة","surp.t3":"📦 موضوع مفاجئ جديد","surp.t4":"✨ مصنوع 100% في تونس",
-  "growth.pill":"📈 نمو الاشتراكات","growth.title":"مجتمع يتضاعف كل ثلاثة أشهر",
-  "growth.p":"منذ الانطلاق، يتصاعد عدد الاشتراكات النشطة شهراً بعد شهر.","growth.note":"متوسط نمو شهري في 2025.",
-  "rev.eyebrow":"يحبّوننا","rev.title":"4.9 / 5 على أكثر من 1900 رأي","rev.sub":"مئات العائلات التونسية تبنّت فالطة بالفعل.",
-  "rev.q1":"«ابني ينتظر ساعي البريد كل بداية شهر! ركّب روبوتاً صغيراً حقيقياً وشرح لي كل شيء.»","rev.r1":"أم · أريانة",
-  "rev.q2":"«صنعتُ بركاناً يُخرج الرغوة ومصباحاً يضيء وحده. أريد علبة المفاجأة القادمة!»","rev.r2":"9 سنوات · سوسة",
-  "rev.q3":"«أستعمل علب فالطة في ورشات القسم. البطاقات متوافقة مع البرنامج والتلاميذ أصبحوا فاعلين.»","rev.r3":"معلّم · تونس",
+  "growth.pill":"📈 اهتمام متزايد","growth.title":"حماس يؤكّد الحاجة",
+  "growth.p":"منذ إطلاق الصفحة، تتصاعد التسجيلات المسبقة أسبوعاً بعد أسبوع.","growth.note":"متوسط نمو أسبوعي.",
+  "rev.eyebrow":"يدعموننا","rev.title":"ما يظنّه أوائل المسجّلين","rev.sub":"عائلات تونسية متحمّسة تثق بنا.",
+  "rev.q1":"«تمكنا من تجربة النموذج الأولي في إحدى الفعاليات، ابني أحبه جداً! ننتظر بفارغ الصبر أول علبة.»","rev.r1":"أم · أريانة",
+  "rev.q2":"«صنعت روبوتاً صغيراً يتحرك وحده مع فريق فالطة. أريد الاشتراك!»","rev.r2":"9 سنوات · سوسة",
+  "rev.q3":"«مفهوم رائع نفتقده بشدة في تونس. المقاربة تربوية جداً.»","rev.r3":"معلّم · تونس",
   "rev.all":"اقرأ كل الآراء",
-  "cta.title":"مستعدّ لإيقاظ عبقري صغير؟","cta.p":"اشتراك واحد، كل شيء مشمول، بـ <strong>99.9 د.ت / شهرياً</strong>. يمكن الإلغاء في أي وقت دون التزام.","cta.btn":"اشترك الآن",
-  "foot.subscribe":"اشترك"
+  "cta.title":"مستعدّ للانضمام إلى المغامرة؟","cta.p":"سجّل مسبقاً الآن — التوصيلات الأولى قادمة قريباً!","cta.btn":"أسجّل مسبقاً",
+  "foot.subscribe":"سجّل مسبقاً"
  }
 };
 
@@ -483,9 +482,9 @@ function animateCount(el){
 var statIO=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.querySelectorAll('[data-count]').forEach(animateCount);statIO.unobserve(e.target)}})},{threshold:.4});
 var sc=document.querySelector('.stats-card'); if(sc)statIO.observe(sc);
 
-var gdata=[{m:'M1',v:320},{m:'M2',v:540},{m:'M3',v:760},{m:'M4',v:1080},{m:'M5',v:1360},{m:'M6',v:1620},{m:'M7',v:1980},{m:'M8',v:2480}];
+var gdata=[{m:'S1',v:5},{m:'S2',v:12},{m:'S3',v:20},{m:'S4',v:30},{m:'S5',v:42},{m:'S6',v:52},{m:'S7',v:60},{m:'S8',v:68}];
 var barsG=document.getElementById('bars'),labsG=document.getElementById('labels');
-var gmax=2600,baseY=220,topY=40,hH=baseY-topY,bw=34,gap=((470-40)-gdata.length*bw)/(gdata.length+1);
+var gmax=80,baseY=220,topY=40,hH=baseY-topY,bw=34,gap=((470-40)-gdata.length*bw)/(gdata.length+1);
 var colors=['#FFD9A8','#FFC987','#FFB36A','#FF9B5A','#FF8163','#FF6A45','#F0552E','#E2461F'];
 gdata.forEach(function(d,i){
   var x=40+gap+i*(bw+gap),bh=(d.v/gmax)*hH;
